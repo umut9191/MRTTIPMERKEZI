@@ -1,0 +1,75 @@
+﻿@model IEnumerable<MRTTIPMERKEZI.Models.Randevu>
+
+@{
+    ViewBag.Title = "ButunRandevular";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section style="margin-top:100px;margin-bottom:250px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-sm-12">
+                <h2>Randevular</h2>
+
+                <p>
+                    @Html.ActionLink("Randevu Ekle", "RandevuAl")
+                </p>
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TC)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AdSoyad)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BabaAdi)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DogumTarihi)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.RandevuTarihi)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Doktorunuz)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TC)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AdSoyad)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BabaAdi)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DogumTarihi)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RandevuTarihi)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Doktorunuz)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Güncelle", "RandevuGuncelle", new { id = item.id })
+
+                            </td>
+                            <td>
+
+                                @Html.ActionLink("Sil", "RandevuSil", new { id = item.id })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MRTTIPMERKEZIDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Randevu_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BabaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DogumTarihi" Type="DateTime" Precision="3" />
+    <Property Name="RandevuTarihi" Type="DateTime" Precision="3" />
+    <Property Name="Doktorunuz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="MRTTIPMERKEZIDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Randevu_tbl" EntityType="Self.Randevu_tbl" />
+    <EntitySet Name="Kullanicilar_tbl" EntityType="MRTTIPMERKEZIDBModel.Kullanicilar_tbl" />
+  </EntityContainer>
+  <EntityType Name="Kullanicilar_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

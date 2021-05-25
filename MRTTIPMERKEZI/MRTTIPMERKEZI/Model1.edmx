@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MRTTIPMERKEZIDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Kullanicilar_tbl">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Sifre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Randevu_tbl">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TC" Type="varchar" MaxLength="11" />
+          <Property Name="AdSoyad" Type="varchar" MaxLength="50" />
+          <Property Name="BabaAdi" Type="varchar" MaxLength="50" />
+          <Property Name="DogumTarihi" Type="datetime" />
+          <Property Name="RandevuTarihi" Type="datetime" />
+          <Property Name="Doktorunuz" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="MRTTIPMERKEZIDBModelStoreContainer">
+          <EntitySet Name="Kullanicilar_tbl" EntityType="Self.Kullanicilar_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Randevu_tbl" EntityType="Self.Randevu_tbl" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MRTTIPMERKEZIDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Randevu_tbl">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BabaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DogumTarihi" Type="DateTime" Precision="3" />
+          <Property Name="RandevuTarihi" Type="DateTime" Precision="3" />
+          <Property Name="Doktorunuz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="MRTTIPMERKEZIDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Randevu_tbl" EntityType="Self.Randevu_tbl" />
+          <EntitySet Name="Kullanicilar_tbl" EntityType="MRTTIPMERKEZIDBModel.Kullanicilar_tbl" />
+        </EntityContainer>
+        <EntityType Name="Kullanicilar_tbl">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MRTTIPMERKEZIDBModelStoreContainer" CdmEntityContainer="MRTTIPMERKEZIDBEntities">
+          <EntitySetMapping Name="Randevu_tbl">
+            <EntityTypeMapping TypeName="MRTTIPMERKEZIDBModel.Randevu_tbl">
+              <MappingFragment StoreEntitySet="Randevu_tbl">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="TC" ColumnName="TC" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="BabaAdi" ColumnName="BabaAdi" />
+                <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+                <ScalarProperty Name="RandevuTarihi" ColumnName="RandevuTarihi" />
+                <ScalarProperty Name="Doktorunuz" ColumnName="Doktorunuz" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kullanicilar_tbl">
+            <EntityTypeMapping TypeName="MRTTIPMERKEZIDBModel.Kullanicilar_tbl">
+              <MappingFragment StoreEntitySet="Kullanicilar_tbl">
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,99 @@
+﻿@using MRTTIPMERKEZI.Models
+@{
+    ViewBag.Title = "RandevuGuncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    Randevu randevu = new Randevu();
+    randevu = (Randevu)ViewBag.randevu;
+
+    string TC = randevu.TC;
+    string AdSoyad = randevu.AdSoyad;
+    string BabaAdi = randevu.BabaAdi;
+    DateTime takvimDT =randevu.DogumTarihi;
+    DateTime takvimRT = randevu.RandevuTarihi;
+
+    string id = randevu.id.ToString();
+}
+@**@
+<section style="margin-top:150px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 my-5">
+                <h4>Randevu Güncelle</h4>
+                <script src="@Url.Content("~/Contents/js/jquery-3.4.1.js")"></script>
+                <script type="text/javascript">
+                    $(function () {
+                        // This will make every element with the class "date-picker" into a DatePicker element
+                        $(".datetimepicker").datetimepicker({
+                            dateFormat: "dd.mm.yy",
+                            changeMonth: true,
+                            changeYear: true,
+                            showOn: "both",
+
+                            buttonText: "<i class='fas fa-calendar-alt'></i>",
+                            //buttonText: "<i class='fa fa-calendar'></i>",
+                            timeFormat: 'hh:mm TT'
+                        });
+                    });
+
+                </script>
+                @using (Html.BeginForm("RandevuGuncelle", "Home", FormMethod.Post, new { @name = "frm" }))
+                {
+
+
+                    @Html.Hidden("guncellenecekID",id)
+                    <table class="table table-borderless">
+                        <tr>
+                            <td> T.C:</td>
+                            <td>
+                                @Html.TextBox("txtTCEkle", TC, new { @class = "form-control", autocomplete = "off", placeholder = "T.C Giriniz ..", required = "required" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Ad Soyad:</td>
+                            <td>
+                                @Html.TextBox("txtAdSoyad", AdSoyad, new { @class = "form-control", autocomplete = "off", placeholder = "Ad Soyad Giriniz ..", required = "required" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Baba Adı:</td>
+                            <td>
+                                @Html.TextBox("txtBabaAdi", BabaAdi, new { @class = "form-control", autocomplete = "off", placeholder = "Baba Adı Giriniz ..", required = "required" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Html.Raw("Doğum Tarihi:")</td>
+                            <td>
+                                @Html.TextBox("takvimDT", takvimDT, new { @class = "datetimepicker form-control", autocomplete = "off", placeholder = "Doğum Tarihi Seçiniz ..", required = "required" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Html.Raw("Randevu Tarihi:")</td>
+                            <td>
+                                @Html.TextBox("takvimRT", takvimRT, new { @class = "datetimepicker form-control", autocomplete = "off", placeholder = "Randevu Tarihi Seçiniz ..", required = "required" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="Guncelle" class="btn btn-success " id="btnGuncelle" />
+                            </td>
+                        </tr>
+                    </table>
+
+                }
+                @*<link href="~/Content/font-awesome.min.css" rel="stylesheet" />*@
+                <link href="~/Content/jquery-ui-timepicker-addon.min.css" rel="stylesheet" />
+
+                <link href="@Url.Content("~/Content/jquery-ui.min.css")" rel="stylesheet" />
+                @section scripts{
+
+
+                    <script src="@Url.Content("~/Scripts/jquery-ui-1.12.1.min.js")"></script>
+                    <script src="~/Scripts/jquery-ui-timepicker-addon.min.js"></script>
+
+                }
+            </div>
+
+        </div>
+    </div>
+</section>

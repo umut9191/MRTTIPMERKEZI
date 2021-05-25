@@ -1,0 +1,77 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GirisYap</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/css/bootstrap.css")">
+    <script src="@Url.Content("~/Contents/js/jquery-3.4.1.js")"></script>
+    <script src="@Url.Content("~/Contents/js/bootstrap.js")"></script>
+
+    <!------ Include the above in your HEAD tag ---------->
+    <!--Bootsrap 4 CDN-->
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="@Url.Content("~/Contents/css/all.css")">
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Contents/css/girisEkraniİcin.css")">
+</head>
+<body>
+
+  
+        <div class="container">
+            <div class="d-flex justify-content-center h-100">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Giriş</h3>
+                        <div class="d-flex justify-content-end social_icon">
+                            <span><i class="fab fa-facebook-square"></i></span>
+                            <span><i class="fab fa-google-plus-square"></i></span>
+                            <span><i class="fab fa-twitter-square"></i></span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form action="GirisYap" method="post">
+                            @if (ViewBag.GirisTeHata == true)
+                            {
+                            <p style="color:red;font-size:large;background-color:antiquewhite"> Email veya Şifre Hatalı!!</p>
+                            }
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="E-Mail" name="Email">
+
+                            </div>
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                <input type="password" class="form-control" placeholder="Şifre" name="Sifre">
+                            </div>
+                            <div class="row align-items-center remember">
+                                <input type="checkbox">Beni Hatırla
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Giris Yap" class="btn float-right login_btn">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-center links">
+                            Bir hesabın yok mu?<a href="#">Kaydol</a>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <a href="#">Şifremi unuttum?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+</html>

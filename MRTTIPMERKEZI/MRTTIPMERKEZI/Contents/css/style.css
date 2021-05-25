@@ -1,0 +1,288 @@
+      /*GENERAL STYLING*/
+     /* body{
+          overflow-x: hidden;
+      }*/
+  h3 {
+        font-size: 18px;
+        font-weight: 400;
+    }
+    p{
+        font-size: 14px;
+    }
+    h2{
+        font-size:32px;
+        font-weight: 400;
+        color: #1886C7;
+        text-transform: uppercase;
+    }
+   /*HEADER SECTION*/
+.navbar{
+    border-bottom: #1886C7 1px solid;
+}
+.navbar-brand{
+    color: #1886C7 !important;
+    font-size: 24px;
+}
+.bg-dark{
+    background-color: rgba(0, 0, 0, 1) !important;
+}
+ .nav-link{
+    color: white !important;
+    text-transform: uppercase;
+    transition: color .5s ease;
+}
+.nav-link:hover{
+    color: #1886C7 !important;
+
+}
+#headerSection{
+    /*deneme3*/
+    background: url('../images/anaSayfa.jpg') no-repeat center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+#headerSection .overlay{
+      /*background-color: rgba(0, 0, 0, .6);*/
+    
+background-color: rgba(0, 0, 0, .7);
+
+}
+#headerSection .row{
+    
+    height: 100vh;
+    }
+   #headerSection span{
+       color:#1886C7 !important;
+   }
+   .btn-outline-primary{
+       padding-left: 30px;
+       padding-right: 30px;
+       border-radius: 0px;
+       cursor: pointer;
+   }
+   /*FEATURE SECTION*/
+   #features .fas {
+       font-size: 40px;
+   }
+   #features .fab {
+    font-size: 40px;
+}
+#features .fa {
+    font-size: 40px;
+}
+/* #features h3:hover,#features .fas:hover ,#features .fab:hover{
+    color: #1886C7;
+    cursor: pointer;
+}*/
+.feature-top:hover{/* usttekinden farkı div elementini etkiliyor.*/
+    color: #1886C7;
+    cursor: pointer; 
+}  
+.feature-top{
+    transition: color .5s ease;
+} 
+
+ /*ourHistory SECTION*/
+ #ourHistory h2{
+     border-left: 6px solid #1886C7;
+     padding-left: 30px;
+ }
+ #ourHistory .col-md-6{
+     display: inline;
+ }
+ #ourHistory .btn-outline-primary{
+   /*position: absolute;*/
+    bottom: 0px;
+}
+ #ourHistory p{
+    line-height: 25px;/*solundaki görseli kapsamasını sağladık*/
+}
+ /*Team SECTION*/
+
+ #team .card{
+        border:none;
+        opacity: 0.5;/*yarı parlaklık*/
+        cursor: pointer;
+        transition: all 0.5s ease;/*0.5 saniyede ease fonksiyonu ile değişim olacak*/
+ }
+ #team .card:hover{
+     opacity: 1;
+ }
+ #team .fab{
+    font-size: 24px;
+}
+ /*what we do SECTION*/
+ #whatWeDo{
+     background: linear-gradient(
+         rgb(0,0,0,.7),
+         rgb(0,0,0,.7)
+     
+     ),
+     url(../images/kbbTechizat.jpg);
+     background-attachment: fixed;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+ }
+
+ /*Case Study SECTION*/
+
+ #caseStudy{
+     background-color:#f4f5f9;
+     line-height: 28px;
+ }
+ .caseArea{
+     background-color: #fff;
+     margin-top: 40px;
+     margin-right: -40px;
+     z-index: 100;
+     padding:40px;
+     /*z- index calışsın diye position:relative*/
+     position: relative;
+     min-height: 420px;
+ }
+ #caseStudy h3{
+     font-size: 18px;
+     margin-top: 40px;
+     margin-bottom: 40px;
+     color: #1886C7;
+ }
+ #caseStudy .fas{
+font-size: 40px;
+color: #1886C7;
+ }
+ .caseImage{
+     margin-left: -40px;
+     
+ }
+ /*portfolio SECTION*/
+
+ #portfolio .col-md-3{
+     padding-left: 0;
+     padding-right: 0;
+     text-align: center;
+ }
+ #portfolio h4{
+     font-size: 16px;
+     font-weight: 300;
+ }
+ #portfolio .fas{
+     font-size: 24px;
+     margin-bottom: 20px;
+ }
+ #portfolio p{
+    font-size: 14px;
+    font-weight: 300;
+}
+.imageContainer{
+    position: relative;
+    cursor: pointer;
+
+}
+.imageOverlay{
+    /*genislik ve yüksekliği bizim vermis olduğumuz div içerisinde 100% diye ayarlıyor*/
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /*hegzadesimel renk*/
+    background-color: #1886C7;
+    opacity: 0;
+    transition: 1s ease;
+}
+.imageContainer:hover .imageOverlay{
+    opacity: .7;
+}
+.imageText{
+    color: white;
+position: absolute;
+top:50%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+/*Referanslar*/
+.carousel-control-prev-icon{
+    width: 40px;
+    height: 40px;
+}
+.carousel-control-next-icon{
+    width: 40px;
+    height: 40px;
+}
+
+/*İletisim*/
+#contact{
+    background-color: #f4f5f9;
+}
+#contact .input-group-text{
+    color: #fff;
+    background-color: #1886C7;
+}
+
+/*footer*/
+#main-footer{
+    color:#fff;
+    background-color: #000;
+}
+
+/*MEDIA QUERIES*/
+/*Örnek ;
+@media screen and (max-width: 900px) and (min-width: 600px)
+{
+ekran 900 px ten kucuk 600 den büyük olduğu zaman istenilen css lerde değişiklik yapılsın
+
+}
+*/
+/*
+bootstrap ın grid değerleridir:
+Extra small <576px	
+Small ≥576px	
+Medium ≥768px	
+Large ≥992px	
+Extra large ≥1200px
+
+bootstrap ın degerleri ile uyussun diye bu değerleri kullanacağız
+*/
+@media screen and (max-width: 1200px){
+    /*max-width ekran maximum 1200 px olana kadar çalış
+    1200 px den büyük olursa çalışma
+    */
+
+}
+@media screen and (max-width: 992px){
+ /* 992px den küçük olunca çalış 
+    */
+    .display-3{
+        font-size: 48px;
+        }
+}
+@media screen and (max-width: 768px){
+/* 768 den küçük olunca çalış 
+    */
+    .display-3{
+        font-size: 32px;
+        }
+
+
+        .caseArea{
+           
+            margin-right: 0px;
+        
+        }
+      
+    
+        .caseImage{
+            margin-left: 0px;
+            text-align: center;
+        }
+}
+@media screen and (max-width: 576px){
+/* 576 dan küçük olunca çalış 
+    */
+    .display-3{
+        font-size: 24px;
+        }
+}

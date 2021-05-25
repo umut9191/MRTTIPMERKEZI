@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MRTTIPMERKEZIDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Kullanicilar_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdSoyad" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Sifre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Randevu_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TC" Type="varchar" MaxLength="11" />
+    <Property Name="AdSoyad" Type="varchar" MaxLength="50" />
+    <Property Name="BabaAdi" Type="varchar" MaxLength="50" />
+    <Property Name="DogumTarihi" Type="datetime" />
+    <Property Name="RandevuTarihi" Type="datetime" />
+    <Property Name="Doktorunuz" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="MRTTIPMERKEZIDBModelStoreContainer">
+    <EntitySet Name="Kullanicilar_tbl" EntityType="Self.Kullanicilar_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Randevu_tbl" EntityType="Self.Randevu_tbl" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

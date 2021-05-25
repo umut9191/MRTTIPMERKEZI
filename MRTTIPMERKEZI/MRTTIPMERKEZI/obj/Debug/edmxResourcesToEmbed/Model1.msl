@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MRTTIPMERKEZIDBModelStoreContainer" CdmEntityContainer="MRTTIPMERKEZIDBEntities">
+    <EntitySetMapping Name="Randevu_tbl">
+      <EntityTypeMapping TypeName="MRTTIPMERKEZIDBModel.Randevu_tbl">
+        <MappingFragment StoreEntitySet="Randevu_tbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="TC" ColumnName="TC" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="BabaAdi" ColumnName="BabaAdi" />
+          <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+          <ScalarProperty Name="RandevuTarihi" ColumnName="RandevuTarihi" />
+          <ScalarProperty Name="Doktorunuz" ColumnName="Doktorunuz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanicilar_tbl">
+      <EntityTypeMapping TypeName="MRTTIPMERKEZIDBModel.Kullanicilar_tbl">
+        <MappingFragment StoreEntitySet="Kullanicilar_tbl">
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
